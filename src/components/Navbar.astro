@@ -1,0 +1,65 @@
+---
+import Burger from './Burger.astro'
+---
+<nav class="max-width">
+    <h2 class="website-name">
+        WEBSITE NAME
+    </h2>
+    <ul id="menu" class="desktop-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <Burger/>
+</nav>
+
+<style>
+    nav ul li a{
+        color: var(--color-light);
+        text-decoration: none;
+        line-height: 200%;
+    }
+
+    nav {
+        color: var(--color-light);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .desktop-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+    }
+
+    .website-name {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    @media screen and (max-width: 1050px) {
+        .desktop-menu {
+            display: none;
+        }
+
+        .is-mobile {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10rem;
+            background-color: rgba(0, 0, 0, 1);
+            padding: 8rem 1rem 2rem;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+        }
+
+        .website-name {
+            position: absolute;
+            top: 2rem;
+            left: 2.5rem;
+        }
+    }
+</style>

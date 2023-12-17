@@ -1,0 +1,118 @@
+---
+import Navbar from './Navbar.astro'
+---
+
+<header id="top">
+    <div class="gradient-overlay header-content">
+        <Navbar/>
+        <section class="hero max-width">
+            <div class="hero-content max-width">
+                <h1>Heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <button class="button">CALL TO ACTION</button>
+            </div>
+            <div class="img-container">
+                <img width="350" height="250" src="/exampleimgsmall.webp" alt="#">
+            </div>
+        </section>
+    </div>
+</header>
+
+<style>
+    header {
+        background-image: url(/header.webp);
+        //background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+        //background-image: radial-gradient( circle farthest-corner at 10% 20%,  var(--color-dark) 0%, var(--color-dark) 81.3% );
+        background-size: cover;
+    }
+
+    header .header-content {
+        padding: 2rem;
+    }
+
+    .gradient-overlay {
+        background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .hero {
+        margin: 12rem auto 12rem;
+        color: var(--color-light);
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 8rem;
+        align-items: center;
+    }
+
+    .hero img {
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        object-fit: cover;
+    }
+
+    .img-container {
+        width: 350px;
+        overflow: hidden;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content p {
+        line-height: 200%;
+        letter-spacing: 1px;
+    }
+
+    @media screen and (max-width: 1050px) {
+        .hero {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            max-width: 500px;
+            margin: 6rem auto 6rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            align-items: center;
+        }
+
+        .img-container img {
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 780px) {
+        .hero {
+            margin: 4rem auto 4rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            align-items: center;
+        }
+
+        .hero img {
+            width: 100%;
+        }
+
+        .hero-content p {
+            line-height: 200%;
+            letter-spacing: 1px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .img-container {
+            width: 250px;
+            height: 250px;
+        }
+    }
+</style>

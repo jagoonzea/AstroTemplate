@@ -1,0 +1,126 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{title}</title>
+		<meta name="description" content="A brief description of your website">
+		<meta name="keywords" content="keywords, related, to, your, content">
+		<meta name="author" content="Your Name">
+		<link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+	:root {
+		--color-primary: #C21D03;
+		--color-dark: #232121;
+		--color-light: #FBFBFB;
+	}
+	
+	html,body{
+    overflow-x: hidden;
+	}
+
+	*, *::before, *::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Roboto', sans-serif;
+		line-height: 161.8%;
+	}
+
+	h1, h2{
+		font-size: 4rem;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	p, .button, nav ul li a, .link {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+
+	.button {
+		display: block;
+		width: fit-content;
+		height: 50px;
+		margin-top: 1rem;
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 50px;
+		background-color: var(--color-primary);
+		color: var(--color-light);
+		font-weight: 700;
+		cursor: pointer;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		line-height: 20px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.max-width {
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media screen and (max-width: 1250px) {
+		.max-width {
+			max-width: 950px;
+		}
+	}
+
+	@media screen and (max-width: 1050px) {
+		.max-width {
+			max-width: 700px;
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		.max-width {
+			max-width: 500px;
+		}
+	}
+
+	@media screen and (max-width: 550px) {
+		.max-width {
+			max-width: 350px;
+		}
+		
+		h1, h2{
+        font-size: 3rem;
+        font-weight: 700;
+    }
+	}
+
+	@media screen and (max-width: 400px) {
+		.max-width {
+			max-width: 300px;
+		}
+
+		h1, h2{
+        font-size: 2.5rem;
+        font-weight: 700;
+    	}
+		.button {
+        font-size: 0.8rem;
+    	}
+	}
+</style>
